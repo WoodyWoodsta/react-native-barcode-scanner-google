@@ -93,13 +93,13 @@ const NativeBarcodeScanner = requireNativeComponent(
  */
 
 // Alternatives: ALL, CODE_128, CODE_39, CODE_93, CODABAR, DATA_MATRIX, EAN_13, EAN_8, ITF, QR_CODE, UPC_A, UPC_E, PDF417, AZTEC
-export const BarcodeType = scannerModule.BarcodeType;
+export const BarcodeType = scannerModule && scannerModule.BarcodeType;
 // Alternatives: AUTO, TAP, FIXED. Note: focusMode TAP won't work if you place a view on top of BarcodeScanner, that catches all touch events.
-export const FocusMode = scannerModule.FocusMode;
+export const FocusMode = scannerModule && scannerModule.FocusMode;
 // Alternatives: OFF, ON
-export const TorchMode = scannerModule.TorchMode;
+export const TorchMode = scannerModule && scannerModule.TorchMode;
 // Alternatives: COVER, FIT
-export const CameraFillMode = scannerModule.CameraFillMode;
+export const CameraFillMode = scannerModule && scannerModule.CameraFillMode;
 
 export const Exception = {
   LOW_STORAGE: LOW_STORAGE_EXCEPTION,
@@ -108,7 +108,7 @@ export const Exception = {
 };
 
 // Methods that the user (dev) might access to pause/resume the scanner at will
-export const pauseScanner = scannerModule.pause;
-export const resumeScanner = scannerModule.resume;
+export const pauseScanner = scannerModule && scannerModule.pause;
+export const resumeScanner = scannerModule && scannerModule.resume;
 
 export default BarcodeScanner;
